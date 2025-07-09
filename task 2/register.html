@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register for a Course</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function showDetails(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const course = document.getElementById("course").value;
+      const details = document.getElementById("courseDetails");
+
+      details.innerHTML = `
+        <div class='card'>
+          <h3>Registration Successful!</h3>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Selected Course:</strong> ${course}</p>
+          <p><strong>Course Details:</strong> Learn ${course} from industry experts with real-world projects and certifications.</p>
+        </div>
+      `;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Course Registration</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <form onsubmit="showDetails(event)">
+      <label>Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Email Address:</label>
+      <input type="email" id="email" required>
+
+      <label>Choose Course:</label>
+      <select id="course">
+        <option value="Web Development">Web Development</option>
+        <option value="Python Programming">Python Programming</option>
+        <option value="UI/UX Design">UI/UX Design</option>
+      </select>
+
+      <input type="submit" value="Register">
+    </form>
+
+    <div id="courseDetails"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Hunar Intern | Forge your ambition</p>
+  </footer>
+</body>
+</html>
